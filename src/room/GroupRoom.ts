@@ -1,3 +1,4 @@
+import { Reservation } from "../reservation";
 import { Room } from "./Room";
 
 export class GroupRoom implements Room {
