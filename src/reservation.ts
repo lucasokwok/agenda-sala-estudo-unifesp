@@ -1,11 +1,9 @@
 import { User } from "./user";
-import { Room } from "./room/Room.ts";
-
 export class Reservation {
   constructor(
     private readonly _date: Date,
     private readonly _user: User,
-    private readonly _room: Room,
+    private readonly _roomName: string,
   ) {}
 
   public get date(): Date {
@@ -16,7 +14,7 @@ export class Reservation {
     return this._user;
   }
 
-  public get room(): Room {
-    return this._room;
+  public get roomName(): string {
+    return this._roomName;
   }
 }

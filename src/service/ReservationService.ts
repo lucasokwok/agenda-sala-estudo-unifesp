@@ -1,3 +1,5 @@
+import { Reservation } from "../reservation";
+import { Room } from "../room/Room";
 import { ReservationStrategy } from "../strategy/ReservationStrategy";
 
 export class ReservationService {
@@ -5,5 +7,14 @@ export class ReservationService {
 
   public create() {
     // verificar se eh possivel reservar usando a strategia recebida
+  }
+
+  public findReservationByDate(
+    date: Date,
+    room: Room,
+  ): Reservation | undefined {
+    return room.reservations.find(
+      (reservation) => reservation.date.getTime() === date.getTime(),
+    );
   }
 }
