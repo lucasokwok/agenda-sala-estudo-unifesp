@@ -1,4 +1,4 @@
-import { User } from "./user";
+import { User } from "./User";
 export class Reservation {
   constructor(
     private readonly _date: Date,

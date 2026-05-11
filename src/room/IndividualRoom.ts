@@ -1,4 +1,4 @@
-import { Reservation } from "../reservation";
+import { Reservation } from "../Reservation";
 import { Room } from "./Room";
 
 export class IndividualRoom implements Room {

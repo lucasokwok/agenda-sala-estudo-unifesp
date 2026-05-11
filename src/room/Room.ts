@@ -1,4 +1,4 @@
-import { Reservation } from "../reservation";
+import { Reservation } from "../Reservation";
 
 export interface Room {
   name: string;

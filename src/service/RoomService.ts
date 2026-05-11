@@ -1,6 +1,6 @@
 import { Room } from "../room/Room";
 import { RoomFactory } from "../factory/RoomFactory";
-import { Reservation } from "../reservation";
+import { Reservation } from "../Reservation";
 
 export class RoomService {
   private static instance: RoomService | null = null;

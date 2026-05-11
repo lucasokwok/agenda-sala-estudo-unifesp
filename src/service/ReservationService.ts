@@ -1,4 +1,4 @@
-import { Reservation } from "../reservation";
+import { Reservation } from "../Reservation";
 import { Room } from "../room/Room";
 import { ReservationStrategy } from "../strategy/ReservationStrategy";
 

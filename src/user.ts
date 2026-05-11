@@ -1,3 +1,14 @@
 export class User {
-  constructor(name: string, isDocente: boolean) {}
+  constructor(
+    private _name: string,
+    private _isDocente: boolean,
+  ) {}
+
+  public get name(): string {
+    return this._name;
+  }
+
+  public get isDocente(): boolean {
+    return this._isDocente;
+  }
 }
