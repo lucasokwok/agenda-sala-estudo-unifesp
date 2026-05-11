@@ -1,9 +1,15 @@
 import { Reservation } from "../Reservation";
 import { Room } from "../room/Room";
+import { RoomService } from "../service/RoomService";
 import { User } from "../User";
 
 export abstract class ReservationStrategy {
-  public verify(date: Date, room: Room, user: User): boolean {
+  public verify(date: Date, roomName: string, user: User): boolean {
+    const roomService = RoomService.getInstance();
+    const room = roomService.findRoom(roomName);
+
+    if (!room) return false; // Sala nao existe
+
     const existingReservation = this.findReservationByDate(date, room);
 
     if (!existingReservation) {
