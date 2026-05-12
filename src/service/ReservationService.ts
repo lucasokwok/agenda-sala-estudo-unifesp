@@ -14,6 +14,6 @@ export class ReservationService {
     // Se chegou aqui room existe entao pode reservar
     const reservation = new Reservation(date, user, roomName);
     const room = RoomService.getInstance().findRoom(roomName);
-    room?.reservations.push(reservation);
+    room?.addReservation(reservation);
   }
 }

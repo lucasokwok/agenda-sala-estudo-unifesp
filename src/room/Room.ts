@@ -5,4 +5,5 @@ export interface Room {
   reservations: Reservation[];
 
   showReservations(): void;
+  addReservation(reservation: Reservation): void;
 }
