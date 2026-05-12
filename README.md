@@ -61,6 +61,15 @@ Utilizado nas classes de prioridade de reserva, permitindo trocar a regra de res
 
 Utilizado na classe abstrata `ReservationStrategy`, que define o fluxo geral de verificação de reserva e deixa a regra específica de conflito para as subclasses.
 
+## Como rodar via CLI
+
+Se desejar testar o sistema usando o terminal, basta rodar os seguintes comandos:
+
+- npm install
+- npm start
+
+O menu aparecerá e você poderá testar o que quiser.
+
 ## Autores
 
 - Lucas de Oliveira Kwok - 163919
