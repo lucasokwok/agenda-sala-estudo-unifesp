@@ -4,7 +4,8 @@
   "description": "Projeto PROJOO",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/lucasokwok/agenda-sala-estudo-unifesp/issues"
   },
-  "homepage": "https://github.com/lucasokwok/agenda-sala-estudo-unifesp#readme"
+  "homepage": "https://github.com/lucasokwok/agenda-sala-estudo-unifesp#readme",
+  "devDependencies": {
+    "vitest": "^4.1.6"
+  }
 }

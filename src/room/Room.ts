@@ -1,9 +1,9 @@
-import { Reservation } from "../reservation";
+import { Reservation } from "../Reservation";
 
 export interface Room {
   name: string;
   reservations: Reservation[];
 
-  book(): boolean;
-  unbook(): boolean;
+  showReservations(): void;
+  addReservation(reservation: Reservation): void;
 }
