@@ -6,6 +6,14 @@ import { RoomService } from "./RoomService";
 export class ReservationService {
   constructor(private reservationStrategy: ReservationStrategy) {}
 
+  public setStrategy(strategy: ReservationStrategy): void {
+    this.reservationStrategy = strategy;
+  }
+
+  public get strategy(): ReservationStrategy {
+    return this.reservationStrategy;
+  }
+
   public create(date: Date, roomName: string, user: User): boolean {
     if (!this.reservationStrategy.verify(date, roomName, user)) return false;
 
