@@ -4,6 +4,7 @@
   "description": "Projeto PROJOO",
   "main": "index.js",
   "scripts": {
+    "start": "tsx src/index.ts",
     "test": "vitest",
     "test:run": "vitest run"
   },
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/lucasokwok/agenda-sala-estudo-unifesp#readme",
   "devDependencies": {
+    "@types/node": "^25.7.0",
+    "tsx": "^4.21.0",
     "vitest": "^4.1.6"
   }
 }
