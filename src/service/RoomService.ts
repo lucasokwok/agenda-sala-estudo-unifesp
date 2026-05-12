@@ -1,5 +1,11 @@
 import { Room } from "../room/Room";
 import { RoomFactory } from "../factory/RoomFactory";
+import { Reservation } from "../Reservation";
+
+type DailyRoomReport = {
+  roomName: string;
+  reservations: Reservation[];
+};
 
 export class RoomService {
   private static instance: RoomService | null = null;
@@ -48,9 +54,26 @@ export class RoomService {
     );
   }
 
+  public generateDailyReservationsReport(date: Date): DailyRoomReport[] {
+    return this.rooms.map((room) => ({
+      roomName: room.name,
+      reservations: room.reservations.filter((reservation) =>
+        this.isSameDay(reservation.date, date),
+      ),
+    }));
+  }
+
   public showRooms(): void {
     this.rooms.forEach((room) => {
       console.log(room.name);
     });
+  }
+
+  private isSameDay(firstDate: Date, secondDate: Date): boolean {
+    return (
+      firstDate.getFullYear() === secondDate.getFullYear() &&
+      firstDate.getMonth() === secondDate.getMonth() &&
+      firstDate.getDate() === secondDate.getDate()
+    );
   }
 }
