@@ -35,6 +35,19 @@ export class RoomService {
     return this.rooms.find((room) => room.name === name);
   }
 
+  public listAvailableRooms(startDate: Date, endDate: Date): Room[] {
+    const intervalStart = Math.min(startDate.getTime(), endDate.getTime());
+    const intervalEnd = Math.max(startDate.getTime(), endDate.getTime());
+
+    return this.rooms.filter((room) =>
+      room.reservations.every((reservation) => {
+        const reservationTime = reservation.date.getTime();
+
+        return reservationTime < intervalStart || reservationTime > intervalEnd;
+      }),
+    );
+  }
+
   public showRooms(): void {
     this.rooms.forEach((room) => {
       console.log(room.name);
